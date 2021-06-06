@@ -6,7 +6,7 @@ import (
 )
 
 // Palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward
-func Palindrome(word string) {
+func Palindrome(word string) bool {
 	lowerWord := strings.ToLower(word)
 	var backword string
 	for _, v := range lowerWord {
@@ -14,8 +14,10 @@ func Palindrome(word string) {
 	}
 
 	if lowerWord == backword {
-		fmt.Printf("%s adalah palindrom\n", word)
+		fmt.Printf("%s is palindrom\n", word)
+		return true
 	} else {
-		fmt.Printf("%s adalah bukan palindrom\n", word)
+		fmt.Printf("%s is not palindrom\n", word)
+		return false
 	}
 }

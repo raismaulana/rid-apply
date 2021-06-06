@@ -12,8 +12,8 @@ func Reverse() {
 	fmt.Println("Masukkan kalimat: ")
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
+	scanner.Scan()
 	sentence := scanner.Text()
-
 	words := strings.Fields(sentence)
 	var sdrow string
 	//loop each word
