@@ -14,3 +14,6 @@
 
 6. access token dikembalikan ke client/front-end sebagai response.
 ![image](https://user-images.githubusercontent.com/22321111/120996641-b3399900-c7b0-11eb-9907-0ec74fda345c.png)
+
+7. access token bisa digunakan untuk authorization ke back-end dan di-refresh jika expired
+![image](https://user-images.githubusercontent.com/22321111/120997603-8c2f9700-c7b1-11eb-8ca8-fdd2e8458079.png)
