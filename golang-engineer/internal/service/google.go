@@ -10,7 +10,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/raismaulana/rid-apply/golang-engineer/internal/config"
 	"github.com/raismaulana/rid-apply/golang-engineer/internal/entity"
-	"github.com/raismaulana/rid-apply/golang-engineer/internal/repository"
 	"github.com/spf13/viper"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
@@ -28,8 +27,8 @@ var (
 		},
 		Endpoint: google.Endpoint,
 	}
-	oauthStateStringGl                           = ""
-	repo               repository.UserRepository = repository.NewUserRepository()
+	oauthStateStringGl = ""
+	// repo               repository.UserRepository = repository.NewUserRepository()
 )
 
 /*
@@ -108,9 +107,9 @@ func CallBackFromGoogle(c *gin.Context) {
 			return
 		}
 		config.Log.Info("parseResponseBody: " + string(response) + "\n")
-		if !isRegistered(google.ID) {
-			insert(google)
-		}
+		// if !isRegistered(google.ID) {
+		// 	insert(google)
+		// }
 
 		msg := `{"access_token":"` + token.AccessToken + `"}`
 		var objmap map[string]*json.RawMessage
@@ -120,27 +119,27 @@ func CallBackFromGoogle(c *gin.Context) {
 	}
 }
 
-func isRegistered(id string) bool {
-	user := repo.GetUser(id)
-	return user.ID != 0
-}
+// func isRegistered(id string) bool {
+// 	user := repo.GetUser(id)
+// 	return user.ID != 0
+// }
 
-func insert(google entity.Google) {
-	var sso = []entity.SSO{
-		{
-			Provider: "GOOGLE",
-			Userid:   google.ID,
-		},
-	}
-	var email = []entity.Email{
-		{
-			Email: google.Email,
-		},
-	}
-	var user = entity.User{
-		Name:   google.Name,
-		Emails: email,
-		Sso:    sso,
-	}
-	repo.InsertUser(user)
-}
+// func insert(google entity.Google) {
+// 	var sso = []entity.SSO{
+// 		{
+// 			Provider: "GOOGLE",
+// 			Userid:   google.ID,
+// 		},
+// 	}
+// 	var email = []entity.Email{
+// 		{
+// 			Email: google.Email,
+// 		},
+// 	}
+// 	var user = entity.User{
+// 		Name:   google.Name,
+// 		Emails: email,
+// 		Sso:    sso,
+// 	}
+// 	repo.InsertUser(user)
+// }
