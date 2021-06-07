@@ -1,6 +1,7 @@
 ### rid-apply
 
 #database schema
+
 ![image](https://user-images.githubusercontent.com/22321111/120995348-85078980-c7af-11eb-9aa4-5c36b1e00a6e.png)
 
 #alur aplikasi
@@ -9,4 +10,7 @@
 3. back-end verifikasi state.
 4. back-end menukarkan code menjadi access token.
 5. access token digunakan untuk mengambil data user.
+![image](https://user-images.githubusercontent.com/22321111/120996740-cc424a00-c7b0-11eb-9dbd-53b0f9c4bf86.png)
+
 6. access token dikembalikan ke client/front-end sebagai response.
+![image](https://user-images.githubusercontent.com/22321111/120996641-b3399900-c7b0-11eb-9907-0ec74fda345c.png)
